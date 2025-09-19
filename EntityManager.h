@@ -38,7 +38,7 @@ public:
 		// Set the enemy's index by using entityCounter
 		const size_t entityKey = entityCount++;
 		newEntity->init(entityKey);
-		renderer.addToStack(newEntity.get(), ERenderLayer::MIDGROUND);
+		renderer.addToStack(newEntity.get(), ERenderLayer::ENTITIES);
 
 		// Actually add the enemy properly inside aliveEntity vector
 		entities.emplace(entityKey, std::move(newEntity));

@@ -15,7 +15,7 @@ void ScreenBuffer::drawString(int x, int y, const std::string& str)
 		draw(x + (int)i, y, str[i]);
 }
 
-void ScreenBuffer::drawText(int x, int y, const std::vector< std::string>& lines)
+void ScreenBuffer::drawLines(int x, int y, const std::vector< std::string>& lines)
 {
 	for (int i = 0; i < lines.size(); i++)
 		drawString(x, y + i, lines[i]);
@@ -32,5 +32,5 @@ void ScreenBuffer::flush()
 			std::cout << buffer[y * width + x];
 		std::cout << "\n";
 	} 
-	std::cout << std::flush;
+	std::cout << "> " << std::flush;
 }

@@ -37,6 +37,12 @@
     <Filter Include="Quelldateien\Render">
       <UniqueIdentifier>{39d8ea55-ad40-43a0-a6d0-14fec771eb43}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Environment">
+      <UniqueIdentifier>{43f7eaf5-70bf-46c1-9f99-e10e39dc3411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Environment">
+      <UniqueIdentifier>{1d5de6f2-d567-4d4b-8531-351a6c0d677f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScreenBuffer.h">
@@ -69,6 +75,12 @@
     <ClInclude Include="RenderStack.h">
       <Filter>Headerdateien\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Headerdateien\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Headerdateien\Environment</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ScreenBuffer.cpp">
@@ -97,6 +109,12 @@
     </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>Quelldateien\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Quelldateien\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Quelldateien\Environment</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
