@@ -18,7 +18,6 @@ void Entity::tick(const float& deltaTime)
 {
 }
 
-void Entity::render()
+void Entity::render(ScreenBuffer& buffer)
 {
-
 }

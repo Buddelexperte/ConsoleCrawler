@@ -35,7 +35,9 @@ void Window::LockConsoleSize()
 
 
 Window::Window()
+    : buffer(120, 29)
 {
+
 }
 
 Window::~Window()
@@ -45,18 +47,18 @@ Window::~Window()
 void Window::init(const std::string& title, int w, int h)
 {
     SetConsoleTitle(title);
+
+    // WIP
     SetConsoleSize(w, h);
     LockConsoleSize();
-    clear();
+
+    // Clear view
+    update();
 }
 
-void Window::clear()
+void Window::update()
 {
-    system("cls");
-}
-
-void Window::render()
-{
-    clear();
-    renderStack.render();
+    buffer.clear();
+    renderStack.render(buffer);
+    buffer.flush();
 }

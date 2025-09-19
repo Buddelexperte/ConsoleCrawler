@@ -19,11 +19,7 @@ void GameInstance::tick_gameplay(const float& deltaTime)
 
 void GameInstance::tick_render(const float& deltaTime)
 {
-	window.render();
-}
-
-void GameInstance::render()
-{
+	window.update();
 }
 
 GameInstance::GameInstance()
@@ -47,7 +43,7 @@ void GameInstance::run()
 		clock.restart();
 
 		tick(deltaTime);
-		render();
+		tick_render(deltaTime);
 	}
 }
 

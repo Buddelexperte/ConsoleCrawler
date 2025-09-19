@@ -2,17 +2,15 @@
 #include "Window.h"
 #include "Clock.h"
 
-#include "Renderable.h"
 #include "EntityManager.h"
 
-class GameInstance : public Renderable
+class GameInstance
 {
 private:
 	void init_members();
 	void init_window();
 	void tick_gameplay(const float& deltaTime);
 	void tick_render(const float& deltaTime);
-	void render() override;
 
 	// Singleton private constructor and destructor
 	GameInstance();

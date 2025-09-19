@@ -4,6 +4,7 @@
 
 #include "GenericPool.h"
 #include "Entity.h"
+#include "Window.h"
 
 class EntityManager
 {
@@ -14,6 +15,8 @@ private:
 
 	static int entityCount;
 	std::unordered_map<size_t, std::unique_ptr<Entity>> entities;
+
+	RenderStack& renderer = Window::getInstance().getRenderStack();
 
 public:
 	// Singleton getInstance method
@@ -35,6 +38,7 @@ public:
 		// Set the enemy's index by using entityCounter
 		const size_t entityKey = entityCount++;
 		newEntity->init(entityKey);
+		renderer.addToStack(newEntity.get(), ERenderLayer::MIDGROUND);
 
 		// Actually add the enemy properly inside aliveEntity vector
 		entities.emplace(entityKey, std::move(newEntity));

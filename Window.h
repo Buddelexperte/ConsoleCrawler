@@ -2,9 +2,10 @@
 #include <string>
 #include <windows.h>
 
+#include "ScreenBuffer.h"
 #include "RenderStack.h"
 
-class Window : public Renderable
+class Window
 {
 private:
 	int WIDTH = 800;
@@ -16,6 +17,7 @@ private:
 	void LockConsoleSize();
 
 	RenderStack renderStack;
+	ScreenBuffer buffer;
 
 	// Singleton private constructor and destructor
 	Window();
@@ -30,9 +32,10 @@ public:
 
 	void init(const std::string& title, int w, int h);
 
-	void clear();
 	const int getWidth() const { return WIDTH; }
 	const int getHeight() const { return HEIGHT; }
-	
-	void render() override;
+
+	RenderStack& getRenderStack() { return renderStack; }
+
+	void update();
 };

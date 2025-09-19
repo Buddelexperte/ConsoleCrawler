@@ -21,6 +21,7 @@ void Player::tick(const float& deltaTime)
 
 }
 
-void Player::render()
+void Player::render(ScreenBuffer& buffer)
 {
+	buffer.drawString(57, 10, "Player");
 }

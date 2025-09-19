@@ -16,5 +16,5 @@ public:
 
 	void tick(const float& deltaTime) override;
 
-	void render() override;
+	void render(ScreenBuffer& buffer) override;
 };

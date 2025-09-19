@@ -18,5 +18,5 @@ public:
 	void init(const int newID);
 	virtual void tick(const float& deltaTime) = 0;
 
-	virtual void render() override;
+	virtual void render(ScreenBuffer& buffer) override;
 };
