@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
 #include <memory>
+#include <unordered_map>
 
 #include "GenericPool.h"
 #include "Entity.h"
@@ -13,7 +13,7 @@ private:
 	~EntityManager();
 
 	static int entityCount;
-	std::vector<std::unique_ptr<Entity>> entities;
+	std::unordered_map<size_t, std::unique_ptr<Entity>> entities;
 
 public:
 	// Singleton getInstance method
@@ -32,12 +32,11 @@ public:
 		// Retrieve an enemy instance from the pool
 		std::unique_ptr<Entity> newEntity = GenericPool<T>::instance().get();
 
-		// Set the enemy's index and add it to the activeEnemies vector
+		// Set the enemy's index by using entityCounter
 		const size_t entityKey = entityCount++;
-		//std::cout << "Using new enemy with ID [" << enemyKey << "]" << std::endl;
 		newEntity->init(entityKey);
 
-		// Actually spawn the enemy properly and update it's attributes accordingly
+		// Actually add the enemy properly inside aliveEntity vector
 		entities.emplace(entityKey, std::move(newEntity));
 	}
 

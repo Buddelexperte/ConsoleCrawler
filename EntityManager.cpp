@@ -12,8 +12,13 @@ EntityManager::~EntityManager()
 
 void EntityManager::tick(const float& deltaTime)
 {
-	for (std::unique_ptr<Entity>& entity : entities)
+	for (const auto& pair : entities)
 	{
+		const std::unique_ptr<Entity>& entity = pair.second;
+
+		if (!entity)
+			continue;
+
 		entity->tick(deltaTime);
 	}
 }
