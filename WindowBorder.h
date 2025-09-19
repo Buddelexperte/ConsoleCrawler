@@ -2,13 +2,13 @@
 
 #include "Renderable.h"
 
-class Background : public Renderable
+class WindowBorder : public Renderable
 {
 private:
 
 public:
-	Background();
-	~Background();
+	WindowBorder();
+	~WindowBorder();
 
 	void render(ScreenBuffer& buffer) override;
 };

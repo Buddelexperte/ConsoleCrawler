@@ -78,8 +78,11 @@
     <ClInclude Include="Environment.h">
       <Filter>Headerdateien\Environment</Filter>
     </ClInclude>
-    <ClInclude Include="Background.h">
-      <Filter>Headerdateien\Environment</Filter>
+    <ClInclude Include="WindowBorder.h">
+      <Filter>Headerdateien\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
+      <Filter>Headerdateien\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,8 +116,11 @@
     <ClCompile Include="Environment.cpp">
       <Filter>Quelldateien\Environment</Filter>
     </ClCompile>
-    <ClCompile Include="Background.cpp">
-      <Filter>Quelldateien\Environment</Filter>
+    <ClCompile Include="WindowBorder.cpp">
+      <Filter>Quelldateien\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface.cpp">
+      <Filter>Quelldateien\Render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

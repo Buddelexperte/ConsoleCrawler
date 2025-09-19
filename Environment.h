@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include <memory>
 
-#include "Background.h"
+#include "Renderable.h"
 
 enum class EBackgroundSprite
 {
@@ -15,7 +15,6 @@ enum class EBackgroundSprite
 class Environment : public Renderable
 {
 private:
-	Background background;
 
 public:
 	Environment();

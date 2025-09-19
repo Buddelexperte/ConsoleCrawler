@@ -6,7 +6,9 @@
 void GameInstance::init_members()
 {
 	entityManager.spawnEntity<Player>();
+
 	window.getRenderStack().addToStack(&environment, ERenderLayer::BACKGROUND);
+	window.getRenderStack().addToStack(&userInterface, ERenderLayer::UI);
 }
 
 void GameInstance::init_window()
@@ -43,7 +45,7 @@ void GameInstance::run()
 	init_window();
 
 	float deltaTime = 0.0f;
-	static constexpr double targetFrameTime = 1.0 / TARGET_FPS; // 60 FPS
+	static constexpr double targetFrameTime = 1.0 / TARGET_FPS;
 	while (true)
 	{
 		auto now = clock::now();

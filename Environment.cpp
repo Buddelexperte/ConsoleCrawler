@@ -10,5 +10,5 @@ Environment::~Environment()
 
 void Environment::render(ScreenBuffer& buffer)
 {
-	background.render(buffer);
+
 }
