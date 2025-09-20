@@ -1,4 +1,5 @@
 #include "ScreenBuffer.h"
+#include "MenuElement.h"
 #include "windows.h"
 
 #include <iostream>
@@ -19,6 +20,11 @@ void ScreenBuffer::drawLines(int x, int y, const std::vector< std::string>& line
 {
 	for (int i = 0; i < lines.size(); i++)
 		drawString(x, y + i, lines[i]);
+}
+
+void ScreenBuffer::drawElem(const Element* elem)
+{
+	drawLines(elem->x, elem->y, elem->content);
 }
 
 void ScreenBuffer::flush()

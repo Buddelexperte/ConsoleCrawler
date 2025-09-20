@@ -3,18 +3,52 @@
 
 #include <thread>
 
+#include "Input.h"
+#include "MenuCollection.h"
+
 void GameInstance::init_members()
 {
 	entityManager.spawnEntity<Player>();
 
 	window.getRenderStack().addToStack(&environment, ERenderLayer::BACKGROUND);
 	window.getRenderStack().addToStack(&userInterface, ERenderLayer::UI);
+
+	userInterface.displayMenu(MenuCollection::MainMenu.get());
 }
 
 void GameInstance::init_window()
 {
 	window.init("Game Window", 1080, 600);
 
+}
+
+void GameInstance::gameLoop()
+{
+	using clock = std::chrono::high_resolution_clock;
+	auto lastFrame = clock::now();
+
+	float deltaTime = 0.0f;
+	static constexpr double targetFrameTime = 1.0 / TARGET_FPS;
+	while (true)
+	{
+		auto now = clock::now();
+		std::chrono::duration<double> elapsed = now - lastFrame;
+		lastFrame = now;
+
+		double deltaTime = elapsed.count();
+
+		tick(deltaTime);
+
+		// Frame limiting for aesthetic and performance
+		auto frameEnd = clock::now();
+		std::chrono::duration<double> frameDuration = frameEnd - now;
+
+		if (frameDuration.count() < targetFrameTime)
+		{
+			auto sleepTime = std::chrono::duration<double>(targetFrameTime - frameDuration.count());
+			std::this_thread::sleep_for(sleepTime);
+		}
+	}
 }
 
 void GameInstance::tick_gameplay(const float& deltaTime)
@@ -37,36 +71,11 @@ GameInstance::~GameInstance()
 
 void GameInstance::run()
 {
-	using clock = std::chrono::high_resolution_clock;
-	auto lastFrame = clock::now();
-
 	init_members();
 
 	init_window();
 
-	float deltaTime = 0.0f;
-	static constexpr double targetFrameTime = 1.0 / TARGET_FPS;
-	while (true)
-	{
-		auto now = clock::now();
-		std::chrono::duration<double> elapsed = now - lastFrame;
-		lastFrame = now;
-
-		double deltaTime = elapsed.count();
-
-		tick(deltaTime);
-		tick_render(deltaTime);
-
-		// Frame limiting for aesthetic and performance
-		auto frameEnd = clock::now();
-		std::chrono::duration<double> frameDuration = frameEnd - now;
-
-		if (frameDuration.count() < targetFrameTime)
-		{
-			auto sleepTime = std::chrono::duration<double>(targetFrameTime - frameDuration.count());
-			std::this_thread::sleep_for(sleepTime);
-		}
-	}
+	gameLoop();
 }
 
 void GameInstance::tick(const float& deltaTime)
@@ -74,4 +83,6 @@ void GameInstance::tick(const float& deltaTime)
 	tick_gameplay(deltaTime);
 
 	tick_render(deltaTime);
+
+	UserInput::tick_events();
 }

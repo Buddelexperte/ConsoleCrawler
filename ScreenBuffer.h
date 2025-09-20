@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+struct Element;
+
 class ScreenBuffer
 {
 private:
@@ -19,6 +21,7 @@ public:
 	void draw(int x, int y, char c);
 	void drawString(int x, int y, const std::string& str);
 	void drawLines(int x, int y, const std::vector<std::string>& lines);
+	void drawElem(const Element* elem);
 
 	void flush();
 };

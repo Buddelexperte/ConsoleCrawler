@@ -19,6 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllMenus.h" />
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuCollection.h" />
+    <ClInclude Include="MenuElement.h" />
     <ClInclude Include="UserInterface.h" />
     <ClInclude Include="WindowBorder.h" />
     <ClInclude Include="Clock.h" />
@@ -34,6 +41,11 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuCollection.cpp" />
+    <ClCompile Include="MenuElement.cpp" />
     <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="WindowBorder.cpp" />
     <ClCompile Include="Clock.cpp" />

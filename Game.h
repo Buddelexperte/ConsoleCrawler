@@ -13,6 +13,8 @@ private:
 
 	void init_members();
 	void init_window();
+
+	void gameLoop();
 	void tick_gameplay(const float& deltaTime);
 	void tick_render(const float& deltaTime);
 
@@ -56,4 +58,9 @@ inline UserInterface& ui()
 inline Environment& gameEnvironment()
 {
 	return GameInstance::getInstance().getEnvironment();
+}
+
+inline MenuInterface* currentMenu()
+{
+	return GameInstance::getInstance().getUserInterface().getCurrentMenu();
 }

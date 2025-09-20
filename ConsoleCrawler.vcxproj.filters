@@ -43,6 +43,12 @@
     <Filter Include="Quelldateien\Environment">
       <UniqueIdentifier>{1d5de6f2-d567-4d4b-8531-351a6c0d677f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Render\Menus">
+      <UniqueIdentifier>{b9fa8405-35f6-400c-927f-3625ee6c80f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Render\Menus">
+      <UniqueIdentifier>{ec1e0061-9022-4f4a-a65f-41fecbb5bc28}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScreenBuffer.h">
@@ -84,6 +90,27 @@
     <ClInclude Include="UserInterface.h">
       <Filter>Headerdateien\Render</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Headerdateien\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuCollection.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuElement.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="AllMenus.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Headerdateien\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>Headerdateien\Util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ScreenBuffer.cpp">
@@ -121,6 +148,21 @@
     </ClCompile>
     <ClCompile Include="UserInterface.cpp">
       <Filter>Quelldateien\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Quelldateien\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuCollection.cpp">
+      <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuElement.cpp">
+      <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Quelldateien\Util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

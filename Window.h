@@ -36,6 +36,17 @@ public:
 	const int getHeight() const { return HEIGHT; }
 
 	RenderStack& getRenderStack() { return renderStack; }
+	ScreenBuffer& getBuffer() { return buffer; }
 
 	void update();
 };
+
+inline Window& window()
+{
+	return Window::getInstance();
+}
+
+inline ScreenBuffer& screenBuffer()
+{
+	return Window::getInstance().getBuffer();
+}
