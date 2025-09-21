@@ -9,17 +9,18 @@
 class UserInterface : public Renderable
 {
 private:
-	MenuInterface* currentMenu;
+	MenuInterface* currentMenu = nullptr;
 	WindowBorder windowBorder;
 
 public:
 	UserInterface();
 	~UserInterface();
 
-	void displayMenu(MenuInterface* menu) { currentMenu = menu; }
+	void displayMenu(MenuInterface* menu);
 	void removeMenu() { currentMenu = nullptr; }
 	MenuInterface* getCurrentMenu() const { return currentMenu; }
 
+	void tick(const float& deltaTime);
 	void handleInput(const char key);
 
 	void render(ScreenBuffer& buffer) override;

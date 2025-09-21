@@ -1,5 +1,7 @@
 #include "MainMenu.h" // Header file
 
+#include "Game.h"
+
 void W_MainMenu::option_down()
 {
 	option_incr(1);
@@ -45,6 +47,17 @@ void W_MainMenu::option_incr(int incr = +1)
 
 void W_MainMenu::exec_option(const char option)
 {
+	switch (option)
+	{
+	case '1':
+		gameInstance().enterGameplay();
+		break;
+	case '2':
+		gameInstance().queueEndGame();
+		break;
+	default:
+		break;
+	}
 }
 
 W_MainMenu::W_MainMenu()
@@ -60,7 +73,15 @@ W_MainMenu::~W_MainMenu()
 
 }
 
-void W_MainMenu::take_input(const char key)
+void W_MainMenu::construct()
+{
+	bg = Element_FillScreen(' ');
+	T_Title = Element(5, 3, "CONSOLE CRAWLER");
+	T_NewGame = Element(5, 6, "> (1) NEW GAME");
+	T_Quit = Element(5, 8, "  (2) QUIT");
+}
+
+void W_MainMenu::takeInput(const char key)
 {
 	switch (key)
 	{

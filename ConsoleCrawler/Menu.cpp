@@ -15,6 +15,7 @@ void MenuInterface::render(ScreenBuffer& buffer)
 		if (!elem)
 			continue;
 
-		buffer.drawElem(elem);
+		if (elem->isVisible)
+			buffer.drawElem(elem);
 	}
 }

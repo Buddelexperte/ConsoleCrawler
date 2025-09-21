@@ -2,29 +2,102 @@
 #include <string>
 #include <vector>
 
+#include <ranges>
+#include <algorithm>
+
+enum class EJustification {
+    LEFT = 0,
+    RIGHT,
+    CENTER,
+    COUNT
+};
+
 struct Element
 {
-	int x = 0; // X-Position in the buffer
-	int y = 0; // Y-Position in the buffer
+public:
+    bool isVisible = true;
 
-	int width = 0; // Max length of vector elements
-	int height = 0; // Num of vector elements
-	std::vector<std::string> content; // Content to render
+    int x = 0; // X-Position in the buffer
+    int y = 0; // Y-Position in the buffer
 
-	Element()
-		: x(0), y(0), width(0), height(0), content(std::vector<std::string>()) {}
+    int width = 0;  // Max length of vector elements
+    int height = 0; // Num of vector elements
+    std::vector<std::string> content; // Content to render
 
-	Element(int x, int y, const std::string& content)
-		: x(x), y(y), width(content.size()), height(1), content({ content }) {}
+    // Default constructor
+    Element(EJustification justification = EJustification::LEFT)
+        : x(0), y(0), width(0), height(0), content() 
+    {
+        applyJustification(justification);
+    }
 
-	Element(int x, int y, int width, const std::vector<std::string>& content)
-		: x(x), y(y), width(width), height(content.size()), content(content) {}
+    // Constructor: single string
+    Element(int x, int y, const std::string& content,
+        EJustification justification = EJustification::LEFT)
+        : x(x), y(y), width(content.size()), height(1), content({ content }) 
+    {
+        applyJustification(justification);
+    }
 
-	Element(int x, int y, int width, int height, const char c)
-		: x(x), y(y), width(width), height(height), content(std::vector<std::string>(height, std::string(width, c))) {}
+    // Constructor: vector of strings
+    Element(int x, int y, const std::vector<std::string>& content,
+        EJustification justification = EJustification::LEFT)
+        : x(x), y(y), width(0), height(content.size()), content(content)
+    {
+        if (!content.empty()) {
+            auto it = std::ranges::max_element(
+                content,
+                {},
+                &std::string::size
+            );
+            width = it->size();
+        }
+
+        applyJustification(justification);
+    }
+
+    // Constructor: specified width + vector
+    Element(int x, int y, int width, const std::vector<std::string>& content,
+        EJustification justification = EJustification::LEFT)
+        : x(x), y(y), width(width), height(content.size()), content(content) 
+    {
+        applyJustification(justification);
+    }
+
+    // Constructor: fill with char
+    Element(int x, int y, int width, int height, const char c,
+        EJustification justification = EJustification::LEFT)
+        : x(x), y(y), width(width), height(height),
+        content(std::vector<std::string>(height, std::string(width, c)))
+    {
+        applyJustification(justification);
+    }
+
+private:
+    void applyJustification(const EJustification justification)
+    {
+        switch (justification)
+        {
+        case EJustification::RIGHT:
+            x -= width;
+            break;
+        case EJustification::CENTER:
+            x -= width / 2;
+            break;
+        // No changes here
+        case EJustification::LEFT:
+        case EJustification::COUNT:
+        default:
+            break;
+        }
+    }
+
 };
+
+
 
 struct Element_FillScreen : public Element
 {
 	Element_FillScreen(const char c);
+	Element_FillScreen();
 };

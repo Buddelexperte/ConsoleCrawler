@@ -34,7 +34,7 @@ void UserInput::tick_events()
 
             if (key.bKeyDown) // only trigger on press
             {
-                currentMenu()->take_input(key.wVirtualKeyCode);
+                currentMenu()->takeInput(key.wVirtualKeyCode);
             }
         }
 

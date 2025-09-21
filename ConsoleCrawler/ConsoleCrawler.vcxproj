@@ -20,13 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllMenus.h" />
+    <ClInclude Include="ControlsHint.h" />
+    <ClInclude Include="EndScreen.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="HUD.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuCollection.h" />
     <ClInclude Include="MenuElement.h" />
     <ClInclude Include="UserInterface.h" />
+    <ClInclude Include="ValueBar.h" />
     <ClInclude Include="WindowBorder.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Entity.h" />
@@ -39,8 +43,12 @@
     <ClInclude Include="RenderStack.h" />
     <ClInclude Include="ScreenBuffer.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="ZeroPrecision.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ControlTutorial.cpp" />
+    <ClCompile Include="EndScreen.cpp" />
+    <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -145,6 +153,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

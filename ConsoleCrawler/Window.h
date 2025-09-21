@@ -12,6 +12,7 @@ private:
 	int HEIGHT = 600;
 	std::string windowTitle = "Window";
 
+	void hideConsoleCursor();
 	void SetConsoleTitle(const std::string& title);
 	void SetConsoleSize(int width, int height);
 	void LockConsoleSize();

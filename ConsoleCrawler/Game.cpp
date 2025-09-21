@@ -8,12 +8,10 @@
 
 void GameInstance::init_members()
 {
-	entityManager.spawnEntity<Player>();
-
 	window.getRenderStack().addToStack(&environment, ERenderLayer::BACKGROUND);
 	window.getRenderStack().addToStack(&userInterface, ERenderLayer::UI);
 
-	userInterface.displayMenu(MenuCollection::MainMenu.get());
+	userInterface.displayMenu(MenuCollection::ControlsHint.get());
 }
 
 void GameInstance::init_window()
@@ -29,7 +27,7 @@ void GameInstance::gameLoop()
 
 	float deltaTime = 0.0f;
 	static constexpr double targetFrameTime = 1.0 / TARGET_FPS;
-	while (true)
+	while (!bGameShouldEnd)
 	{
 		auto now = clock::now();
 		std::chrono::duration<double> elapsed = now - lastFrame;
@@ -51,9 +49,20 @@ void GameInstance::gameLoop()
 	}
 }
 
+void GameInstance::endGame()
+{
+	// Display EndScreen before ending game Loop
+	userInterface.displayMenu(MenuCollection::EndScreen.get());
+}
+
 void GameInstance::tick_gameplay(const float& deltaTime)
 {
-	entityManager.tick(deltaTime);
+	environment.tick(deltaTime);
+}
+
+void GameInstance::tick_menus(const float& deltaTime)
+{
+	userInterface.tick(deltaTime);
 }
 
 void GameInstance::tick_render(const float& deltaTime)
@@ -80,9 +89,24 @@ void GameInstance::run()
 
 void GameInstance::tick(const float& deltaTime)
 {
+	UserInput::tick_events();
+
 	tick_gameplay(deltaTime);
 
-	tick_render(deltaTime);
+	tick_menus(deltaTime);
 
-	UserInput::tick_events();
+	if (bGameShouldEnd) endGame();
+
+	tick_render(deltaTime);
+}
+
+void GameInstance::enterGameplay()
+{
+	environment.startRound();
+	userInterface.displayMenu(MenuCollection::HUD.get());
+}
+
+void GameInstance::queueEndGame()
+{
+	bGameShouldEnd = true;
 }

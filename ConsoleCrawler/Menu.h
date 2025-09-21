@@ -12,7 +12,10 @@ public:
 	MenuInterface();
 	~MenuInterface();
 
-	virtual void take_input(const char key) = 0;
+	virtual void construct() = 0;
+	virtual void tick(const float& deltaTime) {};
+
+	virtual void takeInput(const char key) {};
 
 	void render(ScreenBuffer& buffer) override;
 };

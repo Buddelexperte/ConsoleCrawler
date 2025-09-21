@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "Renderable.h"
+#include "EntityManager.h"
 
 enum class EBackgroundSprite
 {
@@ -15,10 +16,14 @@ enum class EBackgroundSprite
 class Environment : public Renderable
 {
 private:
+	EntityManager& entityManager = EntityManager::getInstance();
 
 public:
 	Environment();
 	~Environment();
+
+	void startRound();
+	void tick(const float& deltaTime);
 
 	void render(ScreenBuffer& buffer) override;
 };

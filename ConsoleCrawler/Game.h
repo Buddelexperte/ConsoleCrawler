@@ -2,9 +2,9 @@
 #include "Window.h"
 #include "Clock.h"
 
-#include "EntityManager.h"
 #include "Environment.h"
 #include "UserInterface.h"
+#include "MenuCollection.h"
 
 class GameInstance
 {
@@ -15,7 +15,11 @@ private:
 	void init_window();
 
 	void gameLoop();
+	void endGame();
+	bool bGameShouldEnd = false;
+
 	void tick_gameplay(const float& deltaTime);
+	void tick_menus(const float& deltaTime);
 	void tick_render(const float& deltaTime);
 
 	// Singleton private constructor and destructor
@@ -28,8 +32,6 @@ private:
 	UserInterface userInterface;
 	Environment environment;
 
-	EntityManager& entityManager = EntityManager::getInstance();
-
 public:
 	// Singleton getInstance method
 	static GameInstance& getInstance()
@@ -40,6 +42,9 @@ public:
 
 	void run();
 	void tick(const float& deltaTime);
+
+	void enterGameplay();
+	void queueEndGame();
 
 	UserInterface& getUserInterface() { return userInterface; }
 	Environment& getEnvironment() { return environment; }

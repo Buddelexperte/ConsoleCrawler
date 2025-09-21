@@ -9,12 +9,26 @@ UserInterface::~UserInterface()
 {
 }
 
+void UserInterface::displayMenu(MenuInterface* menu)
+{
+	currentMenu = menu;
+	currentMenu->construct();
+}
+
+void UserInterface::tick(const float& deltaTime)
+{
+	if (!currentMenu)
+		return;
+
+	currentMenu->tick(deltaTime);
+}
+
 void UserInterface::handleInput(const char key)
 {
 	if (!currentMenu)
 		return;
 
-	currentMenu->take_input(key);
+	currentMenu->takeInput(key);
 }
 
 void UserInterface::render(ScreenBuffer& buffer)

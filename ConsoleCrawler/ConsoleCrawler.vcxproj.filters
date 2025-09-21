@@ -111,6 +111,21 @@
     <ClInclude Include="functions.h">
       <Filter>Headerdateien\Util</Filter>
     </ClInclude>
+    <ClInclude Include="EndScreen.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlsHint.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueBar.h">
+      <Filter>Headerdateien\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ZeroPrecision.h">
+      <Filter>Headerdateien\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ScreenBuffer.cpp">
@@ -163,6 +178,15 @@
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Quelldateien\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlTutorial.cpp">
+      <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="EndScreen.cpp">
+      <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
