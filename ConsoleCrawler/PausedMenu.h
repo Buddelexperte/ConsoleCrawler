@@ -6,19 +6,22 @@
 #include <vector>
 #include <unordered_map>
 
-class W_MainMenu : public MenuInterface
+class W_Paused : public MenuInterface
 {
 private:
-	Element bg;
+	Element modalBorder;
 	Element T_Title;
-	Element T_NewGame;
+
+	Element T_Resume;
+	Element T_Options;
 	Element T_Quit;
 
 	char selectedOption = '1';
-	const std::vector<char> options = { '1', '2' }; // 1 = New Game, 2 = Quit
+	const std::vector<char> options = { '1', '2', '0' }; // 1 = New Game, 2 = Quit
 	const std::unordered_map<char, Element*> optionsElems = {
-		{ '1', &T_NewGame },
-		{ '2', &T_Quit }
+		{ '1', &T_Resume },
+		{ '2', &T_Options },
+		{ '0', &T_Quit }
 	};
 
 	void option_down();
@@ -28,8 +31,8 @@ private:
 	void exec_option(const char option);
 
 public:
-	W_MainMenu();
-	~W_MainMenu();
+	W_Paused();
+	~W_Paused();
 
 	virtual void construct() override;
 

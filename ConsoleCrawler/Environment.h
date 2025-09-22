@@ -25,5 +25,5 @@ public:
 	void startRound();
 	void tick(const float& deltaTime);
 
-	void render(ScreenBuffer& buffer) override;
+	void render(ScreenBuffer& buffer) const override;
 };

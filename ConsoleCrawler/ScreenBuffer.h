@@ -2,6 +2,14 @@
 #include <vector>
 #include <string>
 
+// Standard char for left and right console edges
+static inline constexpr char VERT_LINE_CHAR = char(186);
+static inline constexpr char HOR_LINE_CHAR = char(205);
+static inline constexpr char TL_CORNER_CHAR = char(201);
+static inline constexpr char TR_CORNER_CHAR = char(187);
+static inline constexpr char BL_CORNER_CHAR = char(200);
+static inline constexpr char BR_CORNER_CHAR = char(188);
+
 struct Element;
 
 class ScreenBuffer

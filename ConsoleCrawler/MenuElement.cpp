@@ -10,3 +10,9 @@ Element_FillScreen::Element_FillScreen()
 	: Element_FillScreen(' ')
 {
 }
+
+void Element::render(ScreenBuffer& buffer) const
+{
+	if (isVisible)
+		buffer.drawElem(this);
+}

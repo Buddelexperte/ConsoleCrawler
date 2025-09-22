@@ -3,15 +3,17 @@
 #include "Menu.h"
 #include "Window.h"
 
+#include "PausedMenu.h"
 #include <vector>
 #include <unordered_map>
 
 class W_HUD : public MenuInterface
 {
 private:
-	Element inGame_indic;
+	W_Paused pausedMenu;
 
 	void openPause();
+	void closePause();
 
 public:
 	W_HUD();
@@ -19,5 +21,5 @@ public:
 
 	virtual void construct() override;
 
-	virtual void takeInput(const char key) override;
+	virtual EInputReturn takeInput(const char key) override;
 };

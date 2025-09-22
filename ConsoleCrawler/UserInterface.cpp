@@ -31,7 +31,7 @@ void UserInterface::handleInput(const char key)
 	currentMenu->takeInput(key);
 }
 
-void UserInterface::render(ScreenBuffer& buffer)
+void UserInterface::render(ScreenBuffer& buffer) const
 {
 	if (currentMenu)
 		currentMenu->render(buffer);

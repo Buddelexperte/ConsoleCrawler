@@ -23,5 +23,5 @@ public:
 	const size_t getRenderID() const { return renderID; }
 	const ERenderLayer getRenderLayer() const { return layer; }
 	void setRenderLayer(ERenderLayer l) { layer = l; }
-    virtual void render(ScreenBuffer& buffer) = 0;
+    virtual void render(ScreenBuffer& buffer) const = 0;
 };

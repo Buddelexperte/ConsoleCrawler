@@ -23,5 +23,5 @@ public:
 	void tick(const float& deltaTime);
 	void handleInput(const char key);
 
-	void render(ScreenBuffer& buffer) override;
+	void render(ScreenBuffer& buffer) const override;
 };

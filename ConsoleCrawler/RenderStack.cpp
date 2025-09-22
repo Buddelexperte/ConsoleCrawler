@@ -37,7 +37,7 @@ void RenderStack::removeFromStack(Renderable* obj)
 	}
 }
 
-void RenderStack::render(ScreenBuffer& buffer)
+void RenderStack::render(ScreenBuffer& buffer) const
 {
 	for (int i = 0; i < NUM_LAYERS; i++)
 	{

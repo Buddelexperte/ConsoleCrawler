@@ -2,8 +2,8 @@
 
 W_EndScreen::W_EndScreen()
 {
-	components.push_back(&bg);
-	components.push_back(&T_Title);
+	addComponent(bg);
+	addComponent(T_Title);
 }
 
 W_EndScreen::~W_EndScreen()

@@ -29,6 +29,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuCollection.h" />
     <ClInclude Include="MenuElement.h" />
+    <ClInclude Include="Types.h" />
     <ClInclude Include="UserInterface.h" />
     <ClInclude Include="ValueBar.h" />
     <ClInclude Include="WindowBorder.h" />
@@ -54,6 +55,8 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuCollection.cpp" />
     <ClCompile Include="MenuElement.cpp" />
+    <ClCompile Include="PausedMenu.cpp" />
+    <ClCompile Include="PausedMenu.h" />
     <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="WindowBorder.cpp" />
     <ClCompile Include="Clock.cpp" />

@@ -10,10 +10,10 @@ void W_ControlsHint::onEnter()
 W_ControlsHint::W_ControlsHint()
 	: promptBlinkTimer(BLINK_INTERVAL)
 {
-	components.push_back(&bg);
-	components.push_back(&T_Title);
-	components.push_back(&T_Text);
-	components.push_back(&T_Prompt);
+	addComponent(bg);
+	addComponent(T_Title);
+	addComponent(T_Text);
+	addComponent(T_Prompt);
 }
 
 W_ControlsHint::~W_ControlsHint()
@@ -56,15 +56,20 @@ void W_ControlsHint::construct()
 	T_Prompt = Element(screenHalf_x, promptPos_y, prompt, EJustification::CENTER);
 }
 
-void W_ControlsHint::takeInput(const char key)
+EInputReturn W_ControlsHint::takeInput(const char key)
 {
+	EInputReturn childInput = MenuInterface::takeInput(key);
+	if (childInput != EInputReturn::NOT_USED)
+		return childInput;
+
 	switch (key)
 	{
 	case VK_RETURN:
 		onEnter();
 		break;
 	default:
-		break;
+		return EInputReturn::NOT_USED;
 	}
 
+	return EInputReturn::CONSUMED;
 }

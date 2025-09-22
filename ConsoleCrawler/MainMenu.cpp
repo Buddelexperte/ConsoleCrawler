@@ -2,6 +2,59 @@
 
 #include "Game.h"
 
+W_MainMenu::W_MainMenu()
+{
+	addComponent(bg);
+	addComponent(T_Title);
+	addComponent(T_NewGame);
+	addComponent(T_Quit);
+}
+
+W_MainMenu::~W_MainMenu()
+{
+
+}
+
+void W_MainMenu::construct()
+{
+	bg = Element_FillScreen(' ');
+	T_Title = Element(5, 3, "CONSOLE CRAWLER");
+	T_NewGame = Element(5, 6, "> (1) NEW GAME");
+	T_Quit = Element(5, 8, "  (2) QUIT");
+}
+
+EInputReturn W_MainMenu::takeInput(const char key)
+{
+	const EInputReturn childInput = MenuInterface::takeInput(key);
+	if (childInput != EInputReturn::NOT_USED)
+		return childInput;
+
+	switch (key)
+	{
+	// Up and down "scrolling" using arrow keys
+	case VK_DOWN:
+		option_down();
+		break;
+	case VK_UP:
+		option_up();
+		break;
+	// Allow specific selection without having to tip through all options
+	case '1': case '2':
+		option_select(key);
+		break;
+	// Execute selected Option on 'Enter'
+	case VK_RETURN:
+		exec_option(selectedOption);
+		break;
+	default:
+		return EInputReturn::NOT_USED;
+	}
+
+	return EInputReturn::CONSUMED;
+}
+
+// Option selection
+
 void W_MainMenu::option_down()
 {
 	option_incr(1);
@@ -54,51 +107,6 @@ void W_MainMenu::exec_option(const char option)
 		break;
 	case '2':
 		gameInstance().queueEndGame();
-		break;
-	default:
-		break;
-	}
-}
-
-W_MainMenu::W_MainMenu()
-{
-	components.push_back(&bg);
-	components.push_back(&T_Title);
-	components.push_back(&T_NewGame);
-	components.push_back(&T_Quit);
-}
-
-W_MainMenu::~W_MainMenu()
-{
-
-}
-
-void W_MainMenu::construct()
-{
-	bg = Element_FillScreen(' ');
-	T_Title = Element(5, 3, "CONSOLE CRAWLER");
-	T_NewGame = Element(5, 6, "> (1) NEW GAME");
-	T_Quit = Element(5, 8, "  (2) QUIT");
-}
-
-void W_MainMenu::takeInput(const char key)
-{
-	switch (key)
-	{
-	// Up and down "scrolling" using arrow keys
-	case VK_DOWN:
-		option_down();
-		break;
-	case VK_UP:
-		option_up();
-		break;
-	// Allow specific selection without having to tip through all options
-	case '1': case '2':
-		option_select(key);
-		break;
-	// Execute selected Option on 'Enter'
-	case VK_RETURN:
-		exec_option(selectedOption);
 		break;
 	default:
 		break;

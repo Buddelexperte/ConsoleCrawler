@@ -126,6 +126,9 @@
     <ClInclude Include="HUD.h">
       <Filter>Headerdateien\Render\Menus</Filter>
     </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Headerdateien\Util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ScreenBuffer.cpp">
@@ -186,7 +189,13 @@
       <Filter>Quelldateien\Render\Menus</Filter>
     </ClCompile>
     <ClCompile Include="HUD.cpp">
-      <Filter>Quelldateien</Filter>
+      <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="PausedMenu.h">
+      <Filter>Headerdateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="PausedMenu.cpp">
+      <Filter>Quelldateien\Render\Menus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

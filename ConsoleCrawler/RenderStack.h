@@ -16,6 +16,6 @@ private:
 public:
 	void addToStack(Renderable* obj, const ERenderLayer = ERenderLayer::UI, const bool bStackOnTop = true);
 	void removeFromStack(Renderable* obj);
-	void render(ScreenBuffer& buffer) override;
+	virtual void render(ScreenBuffer& buffer) const override;
 };
 

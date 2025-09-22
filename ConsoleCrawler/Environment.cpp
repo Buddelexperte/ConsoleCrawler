@@ -20,7 +20,7 @@ void Environment::tick(const float& deltaTime)
 	entityManager.tick(deltaTime);
 }
 
-void Environment::render(ScreenBuffer& buffer)
+void Environment::render(ScreenBuffer& buffer) const
 {
 
 }

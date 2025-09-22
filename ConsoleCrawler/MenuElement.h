@@ -5,6 +5,8 @@
 #include <ranges>
 #include <algorithm>
 
+#include "Renderable.h"
+
 enum class EJustification {
     LEFT = 0,
     RIGHT,
@@ -12,7 +14,7 @@ enum class EJustification {
     COUNT
 };
 
-struct Element
+struct Element : public Renderable
 {
 public:
     bool isVisible = true;
@@ -72,6 +74,8 @@ public:
     {
         applyJustification(justification);
     }
+
+    virtual void render(ScreenBuffer& buffer) const override;
 
 private:
     void applyJustification(const EJustification justification)

@@ -26,5 +26,5 @@ public:
 
 	virtual void construct() override;
 
-	void takeInput(const char key) override;
+	EInputReturn takeInput(const char key) override;
 };

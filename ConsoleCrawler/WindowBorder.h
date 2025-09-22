@@ -10,5 +10,5 @@ public:
 	WindowBorder();
 	~WindowBorder();
 
-	void render(ScreenBuffer& buffer) override;
+	void render(ScreenBuffer& buffer) const override;
 };
