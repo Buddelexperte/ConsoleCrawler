@@ -22,7 +22,7 @@ void ScreenBuffer::drawLines(int x, int y, const std::vector< std::string>& line
 		drawString(x, y + i, lines[i]);
 }
 
-void ScreenBuffer::drawElem(const Element* elem)
+void ScreenBuffer::drawElem(const SimpleElement* elem)
 {
 	drawLines(elem->x, elem->y, elem->content);
 }

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Menu.h"
+#include "MenuElement.h"
 #include "Window.h"
 
-class W_EndScreen : public MenuInterface
+class W_EndScreen : public MenuElement
 {
 private:
-	Element_FillScreen bg;
-	Element T_Title;
+	FillScreenElement bg;
+	SimpleElement T_Title;
 
 public:
 	W_EndScreen();

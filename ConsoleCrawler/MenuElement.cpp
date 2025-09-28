@@ -2,16 +2,16 @@
 
 #include "Window.h"
 
-Element_FillScreen::Element_FillScreen(const char c)
-	: Element(0, 0, screenBuffer().getWidth(), screenBuffer().getHeight(), c)
+FillScreenElement::FillScreenElement(const char c)
+	: SimpleElement(0, 0, screenBuffer().getWidth(), screenBuffer().getHeight(), c)
 {}
 
-Element_FillScreen::Element_FillScreen()
-	: Element_FillScreen(' ')
+FillScreenElement::FillScreenElement()
+	: FillScreenElement(' ')
 {
 }
 
-void Element::render(ScreenBuffer& buffer) const
+void SimpleElement::render(ScreenBuffer& buffer) const
 {
 	if (isVisible)
 		buffer.drawElem(this);

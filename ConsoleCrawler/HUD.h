@@ -1,15 +1,17 @@
 #pragma once
 
-#include "Menu.h"
+#include "MenuElement.h"
 #include "Window.h"
 
 #include "PausedMenu.h"
+#include "HealthBar.h"
 #include <vector>
 #include <unordered_map>
 
-class W_HUD : public MenuInterface
+class W_HUD : public MenuElement
 {
 private:
+	HealthBar healthBar;
 	W_Paused pausedMenu;
 
 	void openPause();

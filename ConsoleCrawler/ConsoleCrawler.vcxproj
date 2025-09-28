@@ -23,12 +23,13 @@
     <ClInclude Include="ControlsHint.h" />
     <ClInclude Include="EndScreen.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="HealthBar.h" />
     <ClInclude Include="HUD.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="MenuCollection.h" />
     <ClInclude Include="MenuElement.h" />
+    <ClInclude Include="MenuCollection.h" />
+    <ClInclude Include="SimpleElement.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="UserInterface.h" />
     <ClInclude Include="ValueBar.h" />
@@ -49,6 +50,7 @@
   <ItemGroup>
     <ClCompile Include="ControlTutorial.cpp" />
     <ClCompile Include="EndScreen.cpp" />
+    <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MainMenu.cpp" />

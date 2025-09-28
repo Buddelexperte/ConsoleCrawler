@@ -49,6 +49,12 @@
     <Filter Include="Quelldateien\Render\Menus">
       <UniqueIdentifier>{ec1e0061-9022-4f4a-a65f-41fecbb5bc28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Render\Menus\SubElements">
+      <UniqueIdentifier>{58cbda2f-ad6f-47b3-92ef-0f4c831fd35f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Render\Menus\SubElements">
+      <UniqueIdentifier>{2c3864c1-c9b3-484c-ab0b-c404f8337b65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScreenBuffer.h">
@@ -93,13 +99,13 @@
     <ClInclude Include="MainMenu.h">
       <Filter>Headerdateien\Render\Menus</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
+    <ClInclude Include="MenuElement.h">
       <Filter>Headerdateien\Render</Filter>
     </ClInclude>
     <ClInclude Include="MenuCollection.h">
       <Filter>Headerdateien\Render\Menus</Filter>
     </ClInclude>
-    <ClInclude Include="MenuElement.h">
+    <ClInclude Include="SimpleElement.h">
       <Filter>Headerdateien\Render\Menus</Filter>
     </ClInclude>
     <ClInclude Include="AllMenus.h">
@@ -128,6 +134,9 @@
     </ClInclude>
     <ClInclude Include="Types.h">
       <Filter>Headerdateien\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthBar.h">
+      <Filter>Headerdateien\Render\Menus\SubElements</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +205,9 @@
     </ClCompile>
     <ClCompile Include="PausedMenu.cpp">
       <Filter>Quelldateien\Render\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthBar.cpp">
+      <Filter>Quelldateien\Render\Menus\SubElements</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

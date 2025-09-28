@@ -13,6 +13,8 @@ enum class EBackgroundSprite
 	NUM_BACKGROUNDS
 };
 
+class Player;
+
 class Environment : public Renderable
 {
 private:
@@ -26,4 +28,6 @@ public:
 	void tick(const float& deltaTime);
 
 	void render(ScreenBuffer& buffer) const override;
+
+	EntityManager& getEntityManager();
 };

@@ -10,7 +10,7 @@ static inline constexpr char TR_CORNER_CHAR = char(187);
 static inline constexpr char BL_CORNER_CHAR = char(200);
 static inline constexpr char BR_CORNER_CHAR = char(188);
 
-struct Element;
+struct SimpleElement;
 
 class ScreenBuffer
 {
@@ -29,7 +29,7 @@ public:
 	void draw(int x, int y, char c);
 	void drawString(int x, int y, const std::string& str);
 	void drawLines(int x, int y, const std::vector<std::string>& lines);
-	void drawElem(const Element* elem);
+	void drawElem(const SimpleElement* elem);
 
 	void flush();
 };

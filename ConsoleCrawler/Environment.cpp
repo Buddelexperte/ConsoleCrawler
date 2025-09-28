@@ -12,7 +12,6 @@ Environment::~Environment()
 
 void Environment::startRound()
 {
-	entityManager.spawnEntity<Player>();
 }
 
 void Environment::tick(const float& deltaTime)
@@ -23,4 +22,9 @@ void Environment::tick(const float& deltaTime)
 void Environment::render(ScreenBuffer& buffer) const
 {
 
+}
+
+EntityManager& Environment::getEntityManager()
+{
+	return entityManager;
 }

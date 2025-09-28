@@ -33,13 +33,13 @@ void W_ControlsHint::tick(const float& deltaTime)
 
 void W_ControlsHint::construct()
 {
-	bg = Element_FillScreen(' ');
+	bg = FillScreenElement(' ');
 
 	const int screenHalf_x = screenBuffer().getWidth() / 2;
 	const int screenThird_y = screenBuffer().getHeight() / 3;
 
 	static const std::string title = "CONTROLS";
-	T_Title = Element(screenHalf_x, screenThird_y, title, EJustification::CENTER);
+	T_Title = SimpleElement(screenHalf_x, screenThird_y, title, EJustification::CENTER);
 
 	static const std::vector<std::string> hints = 
 	{
@@ -49,16 +49,16 @@ void W_ControlsHint::construct()
 		"OTHER KEYS - Selection of specific options"
 	};
 
-	T_Text = Element(screenHalf_x, screenThird_y + 2, hints, EJustification::CENTER);
+	T_Text = SimpleElement(screenHalf_x, screenThird_y + 2, hints, EJustification::CENTER);
 
 	static const std::string prompt = "PRESS ENTER TO CONTINUE";
 	int promptPos_y = screenThird_y + 2 + hints.size() + 2;
-	T_Prompt = Element(screenHalf_x, promptPos_y, prompt, EJustification::CENTER);
+	T_Prompt = SimpleElement(screenHalf_x, promptPos_y, prompt, EJustification::CENTER);
 }
 
 EInputReturn W_ControlsHint::takeInput(const char key)
 {
-	EInputReturn childInput = MenuInterface::takeInput(key);
+	EInputReturn childInput = MenuElement::takeInput(key);
 	if (childInput != EInputReturn::NOT_USED)
 		return childInput;
 

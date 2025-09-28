@@ -17,15 +17,15 @@ W_MainMenu::~W_MainMenu()
 
 void W_MainMenu::construct()
 {
-	bg = Element_FillScreen(' ');
-	T_Title = Element(5, 3, "CONSOLE CRAWLER");
-	T_NewGame = Element(5, 6, "> (1) NEW GAME");
-	T_Quit = Element(5, 8, "  (2) QUIT");
+	bg = FillScreenElement(' ');
+	T_Title = SimpleElement(5, 3, "CONSOLE CRAWLER");
+	T_NewGame = SimpleElement(5, 6, "> (1) NEW GAME");
+	T_Quit = SimpleElement(5, 8, "  (2) QUIT");
 }
 
 EInputReturn W_MainMenu::takeInput(const char key)
 {
-	const EInputReturn childInput = MenuInterface::takeInput(key);
+	const EInputReturn childInput = MenuElement::takeInput(key);
 	if (childInput != EInputReturn::NOT_USED)
 		return childInput;
 

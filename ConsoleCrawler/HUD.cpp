@@ -27,7 +27,7 @@ void W_HUD::construct()
 
 EInputReturn W_HUD::takeInput(const char key)
 {
-	EInputReturn childInput = MenuInterface::takeInput(key);
+	EInputReturn childInput = MenuElement::takeInput(key);
 	if (childInput != EInputReturn::NOT_USED)
 		return childInput;
 

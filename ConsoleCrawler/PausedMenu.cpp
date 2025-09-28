@@ -37,25 +37,25 @@ void W_Paused::construct()
 		VERT_LINE_CHAR + std::string(50, ' ') + VERT_LINE_CHAR,
 		BL_CORNER_CHAR + std::string(50, HOR_LINE_CHAR) + BR_CORNER_CHAR
 	};
-	modalBorder = Element(screenHalf_x, screenThird_y - 3, borderText, EJustification::CENTER);
+	modalBorder = SimpleElement(screenHalf_x, screenThird_y - 3, borderText, EJustification::CENTER);
 
 
 	static const std::string title = "(PAUSED)";
-	T_Title = Element(screenHalf_x, screenThird_y, title, EJustification::CENTER);
+	T_Title = SimpleElement(screenHalf_x, screenThird_y, title, EJustification::CENTER);
 
 	static const std::string resume = "> (1) Resume";
-	T_Resume = Element(screenHalf_x - 10, screenThird_y + 3, resume, EJustification::LEFT);
+	T_Resume = SimpleElement(screenHalf_x - 10, screenThird_y + 3, resume, EJustification::LEFT);
 
 	static const std::string options = "  (2) Options";
-	T_Options = Element(screenHalf_x - 10, screenThird_y + 4, options, EJustification::LEFT);
+	T_Options = SimpleElement(screenHalf_x - 10, screenThird_y + 4, options, EJustification::LEFT);
 
 	static const std::string quit = "  (0) Quit";
-	T_Quit = Element(screenHalf_x - 10, screenThird_y + 6, quit, EJustification::LEFT);
+	T_Quit = SimpleElement(screenHalf_x - 10, screenThird_y + 6, quit, EJustification::LEFT);
 }
 
 EInputReturn W_Paused::takeInput(const char key)
 {
-	const EInputReturn childInput = MenuInterface::takeInput(key);
+	const EInputReturn childInput = MenuElement::takeInput(key);
 	if (childInput != EInputReturn::NOT_USED)
 		return childInput;
 

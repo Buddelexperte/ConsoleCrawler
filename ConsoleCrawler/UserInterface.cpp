@@ -9,7 +9,7 @@ UserInterface::~UserInterface()
 {
 }
 
-void UserInterface::displayMenu(MenuInterface* menu)
+void UserInterface::displayMenu(MenuElement* menu)
 {
 	currentMenu = menu;
 	currentMenu->construct();

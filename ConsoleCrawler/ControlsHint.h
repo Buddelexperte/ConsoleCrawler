@@ -1,17 +1,17 @@
 #pragma once
 
-#include "Menu.h"
+#include "MenuElement.h"
 #include "Window.h"
 
 #include "ValueBar.h"
 
-class W_ControlsHint : public MenuInterface
+class W_ControlsHint : public MenuElement
 {
 private:
-	Element_FillScreen bg;
-	Element T_Title;
-	Element T_Text;
-	Element T_Prompt;
+	FillScreenElement bg;
+	SimpleElement T_Title;
+	SimpleElement T_Text;
+	SimpleElement T_Prompt;
 
 	static constexpr float BLINK_INTERVAL = 1.0f;
 	ValueBar promptBlinkTimer;

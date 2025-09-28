@@ -1,26 +1,26 @@
-#include "Menu.h"
+#include "MenuElement.h"
 
-void MenuInterface::addComponent(Renderable* obj)
+void MenuElement::addComponent(Renderable* obj)
 {
     components.push_back(obj);
 }
 
-void MenuInterface::addComponent(Renderable& obj)
+void MenuElement::addComponent(Renderable& obj)
 {
     addComponent(&obj);
 }
 
-MenuInterface::MenuInterface() = default;
+MenuElement::MenuElement() = default;
 
-MenuInterface::~MenuInterface() = default;
+MenuElement::~MenuElement() = default;
 
-void MenuInterface::tick(const float& deltaTime)
+void MenuElement::tick(const float& deltaTime)
 {
     if (activeChild)
         return activeChild->tick(deltaTime);
 }
 
-EInputReturn MenuInterface::takeInput(const char key)
+EInputReturn MenuElement::takeInput(const char key)
 {
     // If default relaying already consumed input, cancel further usage
     if (activeChild)
@@ -31,7 +31,7 @@ EInputReturn MenuInterface::takeInput(const char key)
     return EInputReturn::NOT_USED;
 }
 
-bool MenuInterface::openChild(MenuInterface* child)
+bool MenuElement::openChild(MenuElement* child)
 {
     if (!child) return false;
 
@@ -46,7 +46,7 @@ bool MenuInterface::openChild(MenuInterface* child)
     return true;
 }
 
-void MenuInterface::closeChild()
+void MenuElement::closeChild()
 {
     if (activeChild)
     {
@@ -56,7 +56,7 @@ void MenuInterface::closeChild()
 }
 
 
-void MenuInterface::closeChild(MenuInterface* specificChild)
+void MenuElement::closeChild(MenuElement* specificChild)
 {
     if (activeChild)
     {
@@ -67,19 +67,19 @@ void MenuInterface::closeChild(MenuInterface* specificChild)
     }
 }
 
-bool MenuInterface::hasActiveChild() const
+bool MenuElement::hasActiveChild() const
 {
     return activeChild != nullptr;
 }
 
-MenuInterface* MenuInterface::getActiveChild() const
+MenuElement* MenuElement::getActiveChild() const
 {
     return activeChild;
 }
 
-bool MenuInterface::setParent(MenuInterface* newParent)
+bool MenuElement::setParent(MenuElement* newParent)
 {
-    for (const MenuInterface* ptr = newParent; ptr != nullptr; ptr = ptr->getParent())
+    for (const MenuElement* ptr = newParent; ptr != nullptr; ptr = ptr->getParent())
     {
         if (ptr == this) return false; // cycle detected, return false
     }
@@ -88,18 +88,18 @@ bool MenuInterface::setParent(MenuInterface* newParent)
     return true;
 }
 
-const MenuInterface* MenuInterface::getParent() const
+const MenuElement* MenuElement::getParent() const
 {
     return parent;
 }
 
-void MenuInterface::closeInParent()
+void MenuElement::closeInParent()
 {
     if (parent)
         parent->closeChild(this);
 }
 
-void MenuInterface::render(ScreenBuffer& buffer) const
+void MenuElement::render(ScreenBuffer& buffer) const
 {
     if (!isVisible) return;
 

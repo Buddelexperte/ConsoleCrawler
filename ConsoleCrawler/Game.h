@@ -57,15 +57,25 @@ inline GameInstance& gameInstance()
 
 inline UserInterface& ui()
 {
-	return GameInstance::getInstance().getUserInterface();
+	return gameInstance().getUserInterface();
 }
 
 inline Environment& gameEnvironment()
 {
-	return GameInstance::getInstance().getEnvironment();
+	return gameInstance().getEnvironment();
 }
 
-inline MenuInterface* currentMenu()
+inline MenuElement* currentMenu()
 {
-	return GameInstance::getInstance().getUserInterface().getCurrentMenu();
+	return ui().getCurrentMenu();
+}
+
+inline EntityManager& entityManager()
+{
+	return gameEnvironment().getEntityManager();
+}
+
+inline Player* getPlayer()
+{
+	return entityManager().getPlayer();
 }

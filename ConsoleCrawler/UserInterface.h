@@ -4,21 +4,21 @@
 
 // Components
 #include "WindowBorder.h"
-#include "Menu.h"
+#include "MenuElement.h"
 
 class UserInterface : public Renderable
 {
 private:
-	MenuInterface* currentMenu = nullptr;
+	MenuElement* currentMenu = nullptr;
 	WindowBorder windowBorder;
 
 public:
 	UserInterface();
 	~UserInterface();
 
-	void displayMenu(MenuInterface* menu);
+	void displayMenu(MenuElement* menu);
 	void removeMenu() { currentMenu = nullptr; }
-	MenuInterface* getCurrentMenu() const { return currentMenu; }
+	MenuElement* getCurrentMenu() const { return currentMenu; }
 
 	void tick(const float& deltaTime);
 	void handleInput(const char key);

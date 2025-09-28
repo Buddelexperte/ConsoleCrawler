@@ -6,12 +6,17 @@
 #include "Entity.h"
 #include "Window.h"
 
+class Player;
+
 class EntityManager
 {
 private:
 	// Singleton private constructor and destructor
 	EntityManager();
 	~EntityManager();
+
+	std::unique_ptr<Player> player = nullptr;
+	void spawnPlayer(); // Called from private constructor
 
 	static int entityCount;
 	std::unordered_map<size_t, std::unique_ptr<Entity>> entities;
@@ -25,7 +30,6 @@ public:
 		static EntityManager instance;
 		return instance;
 	}
-
 
 	template<typename T>
 	void spawnEntity()
@@ -45,4 +49,6 @@ public:
 	}
 
 	void tick(const float& deltaTime);
+
+	Player* getPlayer();
 };

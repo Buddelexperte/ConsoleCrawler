@@ -64,7 +64,6 @@ void Window::init(const std::string& title, int w, int h)
     hideConsoleCursor();
     SetConsoleTitle(title);
 
-    // WIP
     SetConsoleSize(w, h);
     LockConsoleSize();
 

@@ -1,24 +1,24 @@
 #pragma once
 
-#include "Menu.h"
+#include "MenuElement.h"
 #include "Window.h"
 
 #include <vector>
 #include <unordered_map>
 
-class W_Paused : public MenuInterface
+class W_Paused : public MenuElement
 {
 private:
-	Element modalBorder;
-	Element T_Title;
+	SimpleElement modalBorder;
+	SimpleElement T_Title;
 
-	Element T_Resume;
-	Element T_Options;
-	Element T_Quit;
+	SimpleElement T_Resume;
+	SimpleElement T_Options;
+	SimpleElement T_Quit;
 
 	char selectedOption = '1';
 	const std::vector<char> options = { '1', '2', '0' }; // 1 = New Game, 2 = Quit
-	const std::unordered_map<char, Element*> optionsElems = {
+	const std::unordered_map<char, SimpleElement*> optionsElems = {
 		{ '1', &T_Resume },
 		{ '2', &T_Options },
 		{ '0', &T_Quit }
