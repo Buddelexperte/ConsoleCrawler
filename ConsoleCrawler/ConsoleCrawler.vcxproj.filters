@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Headerdateien\Util">
-      <UniqueIdentifier>{c24bcc21-2fcd-4b9d-b634-0183a462ba4e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\Render">
-      <UniqueIdentifier>{9673a8ba-bd00-4d40-a8e9-d3ec881ea690}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\Util">
       <UniqueIdentifier>{3a730eb9-6773-4efc-ba43-0ee7983282bf}</UniqueIdentifier>
     </Filter>
@@ -28,115 +22,28 @@
     <Filter Include="Headerdateien\Entities">
       <UniqueIdentifier>{9040aafd-6e81-4dd1-bfac-28e1b8c02614}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Entities\Player">
-      <UniqueIdentifier>{93716946-7241-44c9-9f3f-5b1e4e2938d4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\Entities\Player">
       <UniqueIdentifier>{83aae031-b3cc-4c88-ab29-48c26d337ac4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Quelldateien\Render">
       <UniqueIdentifier>{39d8ea55-ad40-43a0-a6d0-14fec771eb43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Environment">
-      <UniqueIdentifier>{43f7eaf5-70bf-46c1-9f99-e10e39dc3411}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\Environment">
       <UniqueIdentifier>{1d5de6f2-d567-4d4b-8531-351a6c0d677f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Render\Menus">
-      <UniqueIdentifier>{b9fa8405-35f6-400c-927f-3625ee6c80f1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\Render\Menus">
       <UniqueIdentifier>{ec1e0061-9022-4f4a-a65f-41fecbb5bc28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\Render\Menus\SubElements">
-      <UniqueIdentifier>{58cbda2f-ad6f-47b3-92ef-0f4c831fd35f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Quelldateien\Render\Menus\SubElements">
       <UniqueIdentifier>{2c3864c1-c9b3-484c-ab0b-c404f8337b65}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ScreenBuffer.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="GenericPool.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="Clock.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
     <ClInclude Include="EntityManager.h">
       <Filter>Headerdateien\Entities</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Headerdateien\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Headerdateien\Entities\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Window.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderable.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderStack.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Environment.h">
-      <Filter>Headerdateien\Environment</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowBorder.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="UserInterface.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuElement.h">
-      <Filter>Headerdateien\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuCollection.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="SimpleElement.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="AllMenus.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="EndScreen.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="ControlsHint.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="ValueBar.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="ZeroPrecision.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="HUD.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
-    </ClInclude>
-    <ClInclude Include="Types.h">
-      <Filter>Headerdateien\Util</Filter>
-    </ClInclude>
-    <ClInclude Include="HealthBar.h">
-      <Filter>Headerdateien\Render\Menus\SubElements</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +106,6 @@
     </ClCompile>
     <ClCompile Include="HUD.cpp">
       <Filter>Quelldateien\Render\Menus</Filter>
-    </ClCompile>
-    <ClCompile Include="PausedMenu.h">
-      <Filter>Headerdateien\Render\Menus</Filter>
     </ClCompile>
     <ClCompile Include="PausedMenu.cpp">
       <Filter>Quelldateien\Render\Menus</Filter>

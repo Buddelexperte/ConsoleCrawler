@@ -19,33 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllMenus.h" />
-    <ClInclude Include="ControlsHint.h" />
-    <ClInclude Include="EndScreen.h" />
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="HealthBar.h" />
-    <ClInclude Include="HUD.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="MenuElement.h" />
-    <ClInclude Include="MenuCollection.h" />
-    <ClInclude Include="SimpleElement.h" />
-    <ClInclude Include="Types.h" />
-    <ClInclude Include="UserInterface.h" />
-    <ClInclude Include="ValueBar.h" />
-    <ClInclude Include="WindowBorder.h" />
-    <ClInclude Include="Clock.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityManager.h" />
-    <ClInclude Include="Environment.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GenericPool.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Renderable.h" />
-    <ClInclude Include="RenderStack.h" />
-    <ClInclude Include="ScreenBuffer.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="ZeroPrecision.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ControlTutorial.cpp" />
@@ -58,7 +33,6 @@
     <ClCompile Include="MenuCollection.cpp" />
     <ClCompile Include="MenuElement.cpp" />
     <ClCompile Include="PausedMenu.cpp" />
-    <ClCompile Include="PausedMenu.h" />
     <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="WindowBorder.cpp" />
     <ClCompile Include="Clock.cpp" />
